@@ -13,13 +13,16 @@ access the [ShareFile API](http://api.sharefile.com/rest/).
 Grab the latest version of the PowerShell SDK by clicking [here](https://github.com/citrix/ShareFile-PowerShell/releases)
 
 Once the ShareFile PowerShell SDK is installed, you can use it by simply launching PowerShell and using this command:
+
     Add-PSSnapIn ShareFile
+
 For a more exhaustive guide, visit the ShareFile wiki by clicking [here](https://github.com/citrix/ShareFile-PowerShell/wiki/Getting-Started).
 
 ## The Functions
 [**Set-SFPassword**](https://github.com/jstrong013/ShareFile/blob/master/Set-SFPassword.ps1) - Sets an employee's password to a new value provided.
-    Set-SFPassword -Identity jstrong013@users.noreply.github.com -NewPassword 'P@ssw0rdThatMeetsOrgRequirements'
+    
+	Set-SFPassword -Identity jstrong013@users.noreply.github.com -NewPassword 'P@ssw0rdThatMeetsOrgRequirements'
 	
 ## A quick note on licensing... 
-All ShareFile PowerShell scripts are released under the [MIT licene](https://github.com/jstrong013/ShareFile/blob/master/LICENSE.txt) unless otherwise 
+All ShareFile PowerShell scripts are released under the [MIT license](https://github.com/jstrong013/ShareFile/blob/master/LICENSE.txt) unless otherwise 
 noted.
