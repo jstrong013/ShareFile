@@ -22,6 +22,12 @@ For a more exhaustive guide, visit the ShareFile wiki by clicking [here](https:/
 [**Set-SFPassword**](https://github.com/jstrong013/ShareFile/blob/master/Set-SFPassword.ps1) - Sets an employee's password to a new value provided.
     
 	Set-SFPassword -Identity jstrong013@users.noreply.github.com -NewPassword 'P@ssw0rdThatMeetsOrgRequirements'
+
+[**Send-SFWelcomeNotification](https://github.com/jstrong013/ShareFile/blob/master/Send-SFWelcomeNotification.ps1) - Sends a welcome notification to
+a specified ShareFile account.
+
+    Send-SFWelcomeNotification -email jstrong013@users.noreply.github.com
+	Send-SFWelcomeNotification -email jstrong013@users.noreply.github.com -welcomeMessage 'Hello' -employeeAccount
 	
 ## A quick note on licensing... 
 All ShareFile PowerShell scripts are released under the [MIT license](https://github.com/jstrong013/ShareFile/blob/master/LICENSE.txt) unless otherwise 
