@@ -23,7 +23,7 @@ For a more exhaustive guide, visit the ShareFile wiki by clicking [here](https:/
     
 	Set-SFPassword -Identity jstrong013@users.noreply.github.com -NewPassword 'P@ssw0rdThatMeetsOrgRequirements'
 
-[**Send-SFWelcomeNotification](https://github.com/jstrong013/ShareFile/blob/master/Send-SFWelcomeNotification.ps1) - Sends a welcome notification to
+[**Send-SFWelcomeNotification**](https://github.com/jstrong013/ShareFile/blob/master/Send-SFWelcomeNotification.ps1) - Sends a welcome notification to
 a specified ShareFile account.
 
     Send-SFWelcomeNotification -email jstrong013@users.noreply.github.com
