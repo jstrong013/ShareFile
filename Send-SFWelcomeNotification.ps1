@@ -109,7 +109,7 @@
 
            
            if (!$employeeAccount) {
-                $client = Send-SfRequest -Client $sfClient -Entity Accounts\Clients -Method GET | Where-Object { $PSItem.Email -match $identity } 
+                $client = Send-SfRequest -Client $sfClient -Entity Accounts\Clients -Method GET | Where-Object { $PSItem.Email -match "^$identity$" } 
 
                 if ($client -and $client.Count -eq 1) {
                     Send-SfRequest -Client $sfClient -Entity Users -Method POST -Id $client.Id -Navigation ResendWelcome -Parameters @{ "customMessage" = "$welcomeMessage" }
@@ -123,7 +123,7 @@
 
 
            if ($employeeAccount) {
-                $employee = Send-SfRequest -Client $sfClient -Entity Accounts\Employees -Method GET | Where-Object { $PSItem.Email -match $identity }
+                $employee = Send-SfRequest -Client $sfClient -Entity Accounts\Employees -Method GET | Where-Object { $PSItem.Email -match "^$identity$" }
 
                 if ($employee -and $employee.Count -eq 1) {
                     Send-SfRequest -Client $sfClient -Entity Users -Method POST -Id $employee.Id -Navigation ResendWelcome -Parameters @{ "customMessage" = "$welcomeMessage" }
