@@ -55,10 +55,10 @@ function Set-SFPassword
     Process
     {
         # Grab the Sharefile employee account
-        $employee = Send-SfRequest -Client $sfClient -Method GET -Entity Accounts\Employees | Where-Object { $PSItem.Email -match $Identity }
+        $employee = Send-SfRequest -Client $sfClient -Method GET -Entity Accounts\Employees | Where-Object { $PSItem.Email -match "^$Identity$" }
         
-        # Verify that we have the appropriate # of accounts.
-        if ($Identity.Count -ne $employee.Count ) {
+        # Verify that we have the appropriate email for account.
+        if ($Identity -ne $employee.Email ) {
             Write-Error "Sharefile Account $identity could not be located or multiple employee accounts exist. Script ending... " 
             exit 13
         }
