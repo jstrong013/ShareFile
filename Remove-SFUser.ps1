@@ -11,6 +11,7 @@ Function Remove-SFUser{
         [ValidatePattern("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")]
         [string[]]$Email,
 
+        # Email of the ShareFile account to reassign the data of the removed account provided in the Email parameter
         [ValidatePattern("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")]
         [Alias("AssignTo","ItemsReassignTo")]
         [string]$ReassignEmail,
@@ -37,7 +38,7 @@ Function Remove-SFUser{
         }
         finally { 
             Write-Error "Unable to load ShareFile Snapin or get ShareFile credentials"
-            if ($sfClient) {
+            if ( -not $Client) {
                 Remove-Item $sfClient.Path -Force 
             }
             Remove-PSSnapin ShareFile 
