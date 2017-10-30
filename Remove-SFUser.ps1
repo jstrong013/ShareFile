@@ -36,12 +36,13 @@ Function Remove-SFUser{
                 $sfClient = New-SfClient -Name "$env:TEMP\sfClient.sfps" -ErrorAction Stop
             }
         }
-        finally { 
+        catch { 
             Write-Error "Unable to load ShareFile Snapin or get ShareFile credentials"
             if ( -not $Client) {
                 Remove-Item $sfClient.Path -Force 
             }
             Remove-PSSnapin ShareFile 
+            exit
         }
     
         # Check if a reassignment email was specified for data to be assigned - Not a Pipeline Parameter
@@ -49,12 +50,13 @@ Function Remove-SFUser{
             #Find account associated to the email address that is to be fully removed   
             $sfUserAssign = Send-SfRequest -Client $sfClient -Method GET -Entity Users -Parameters @{"EmailAddress"="$reassignEmail"} -ErrorAction Stop
         }
-        finally {
+        catch {
             Write-Error "Unable to find ShareFile Account for data assignment"
             if ( -not $Client) {
                 Remove-Item $sfClient.Path -Force
             }
             Remove-PSSnapin ShareFile
+            exit
         }
 
     }#end Begin block
