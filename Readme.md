@@ -29,6 +29,12 @@ a specified ShareFile account.
     Send-SFWelcomeNotification -email jstrong013@users.noreply.github.com
 	Send-SFWelcomeNotification -email jstrong013@users.noreply.github.com -welcomeMessage 'Hello' -employeeAccount
 	
+[**Remove-SFUser**](../blob/master/Remove-SFUser.ps1) - Removes a ShareFile Account and optionally reasigns data to another ShareFile employee account. 
+
+    Remove-SFUser -email jstrong013@users.noreply.github.com 
+	Remove-SFUser -email jstrong013@users.noreply.github.com -reassignEmail sharefileEmployeeAccount@example.com 
+
+	
 ## A quick note on licensing... 
 All ShareFile PowerShell scripts are released under the [MIT license](https://github.com/jstrong013/ShareFile/blob/master/LICENSE.txt) unless otherwise 
 noted.
