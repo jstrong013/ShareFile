@@ -1,3 +1,6 @@
+# **Archived Project Warning:** This project is archived  
+After zero updates in five years, this respository is being archived. If ShareFile offers a free developer subscription, please let me know! If that becomes the case, then I would be happy to continue exploring work on this repository!  
+
 # Sharefile PowerShell Scripts
 Scripts in this area are meant to provide Citrix ShareFile Administrators a way to better manage their
 Citrix Sharefile environment. 
